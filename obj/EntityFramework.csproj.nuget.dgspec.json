@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/EntityFramework.csproj": {}
+  },
+  "projects": {
+    "/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/EntityFramework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/EntityFramework.csproj",
+        "projectName": "EntityFramework",
+        "projectPath": "/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/EntityFramework.csproj",
+        "packagesPath": "/home/karel/.nuget/packages/",
+        "outputPath": "/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/karel/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
