@@ -40,25 +40,17 @@ namespace EntityFramework
             var regions_sum = from r in regions
                 group r.aantal by r.country
                 into groep
-                select new
-                {
-                    country=groep.Key,aantal=groep.Sum()
-                };
-                 var width = Console.WindowWidth;
+                select new {country = groep.Key, aantal = groep.Sum()};
+            var width = Console.WindowWidth;
             var pad = width / 6;
             Console.WriteLine("Land".PadRight(pad) + "Totaal Verkocht".PadRight(pad));
-            
             foreach (var region in regions_sum)
-                Console.WriteLine("{0}".PadRight(pad) + "{1}", region.country,region.aantal);
-            
-            
+                Console.WriteLine("{0}".PadRight(pad) + "{1}", region.country, region.aantal);
             Console.Write("Geef de landnaam in om details te bekijken: ");
-            string countryInQuestion = Console.ReadLine();
-            Console.Write("Klant ID".PadRight(pad*2) + "KlantNaam".PadRight(pad * 2) +
+            var countryInQuestion = Console.ReadLine();
+            Console.Write("Klant ID".PadRight(pad * 2) + "KlantNaam".PadRight(pad * 2) +
                           "Werknemer naam".PadRight(pad * 2) + "\n");
             Console.WriteLine(string.Concat(Enumerable.Repeat("-", width)));
-            
-            
             var regionDetail = from o in db.Orders
                 join c in db.Customers on o.CustomerId equals c.CustomerId
                 join d in db.OrderDetails on o.OrderId equals d.OrderId
@@ -67,61 +59,35 @@ namespace EntityFramework
             var regionDetail_sum = from r in regionDetail
                 group r.aantal by r.customerId
                 into groep
-                select new
-                {
-                    customerId=groep.Key, aantal=groep.Sum()
-                };
+                select new {customerId = groep.Key, aantal = groep.Sum()};
             var regionDetail_All = from s in regionDetail_sum
                 join c in db.Customers on s.customerId equals c.CustomerId
-                select new
-                {
-                    costumerId = c.CustomerId, 
-                    name = c.ContactName,
-                    aantal = s.aantal
-                };
+                select new {costumerId = c.CustomerId, name = c.ContactName, s.aantal};
             foreach (var region in regionDetail_All)
-            {
-                Console.WriteLine("{0}".PadRight(pad*2)+"{1}".PadRight(pad*2)+"{2}".PadRight(pad*2), region.costumerId, region.name,region.aantal);
-            }
-
+                Console.WriteLine("{0}".PadRight(pad * 2) + "{1}".PadRight(pad * 2) + "{2}".PadRight(pad * 2),
+                    region.costumerId, region.name, region.aantal);
             Console.WriteLine("Geef een klant id in: ");
-            string costumerInQuestion = Console.ReadLine();
+            var costumerInQuestion = Console.ReadLine();
             var pad2 = width / 8;
-            Console.Write("Order ID".PadRight(pad2*2) + "Order Datum".PadRight(pad2*2) + "verzenddatum".PadRight(pad2 * 2) +
-                          "Totaal".PadRight(pad2 * 2) + "\n");
+            Console.Write("Order ID".PadRight(pad2 * 2) + "Order Datum".PadRight(pad2 * 2) +
+                          "verzenddatum".PadRight(pad2 * 2) + "Totaal".PadRight(pad2 * 2) + "\n");
             Console.Write(string.Concat(Enumerable.Repeat("-", width)));
-            
-            
-            
             var klant = from c in db.Customers
                 join o in db.Orders on c.CustomerId equals o.CustomerId
                 join d in db.OrderDetails on o.OrderId equals d.OrderId
                 where c.CustomerId == costumerInQuestion
                 select new {aantal = d.UnitPrice * d.Quantity, orderId = o.OrderId};
-           
             var klantSum = from k in klant
                 group k.aantal by k.orderId
                 into groep
-                select new
-                {
-                    orderId=groep.Key, 
-                    aantal=groep.Sum()
-                };
-         
+                select new {orderId = groep.Key, aantal = groep.Sum()};
             var ordersDetail = from s in klantSum
                 join o in db.Orders on s.orderId equals o.OrderId
-                select new
-                {
-                    orderId = s.orderId,
-                    orderDatum = o.OrderDate,
-                    shippedDatum = o.ShippedDate,
-                    aantal = s.aantal
-                };
+                select new {s.orderId, orderDatum = o.OrderDate, shippedDatum = o.ShippedDate, s.aantal};
             foreach (var order in ordersDetail)
-            {
-                Console.WriteLine("{0}".PadRight(pad*2)+"{1}".PadRight(pad*2)+"{2}".PadRight(pad*2)+"{3}".PadRight(pad*2), order.orderId, order.orderDatum,order.shippedDatum,order.aantal);
-            }
-
+                Console.WriteLine(
+                    "{0}".PadRight(pad * 2) + "{1}".PadRight(pad * 2) + "{2}".PadRight(pad * 2) +
+                    "{3}".PadRight(pad * 2), order.orderId, order.orderDatum, order.shippedDatum, order.aantal);
             Verder();
         }
 
