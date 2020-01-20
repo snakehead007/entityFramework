@@ -1,0 +1,10 @@
+/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/bin/Debug/netcoreapp2.1/EntityFramework.deps.json
+/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/bin/Debug/netcoreapp2.1/EntityFramework.runtimeconfig.json
+/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/bin/Debug/netcoreapp2.1/EntityFramework.runtimeconfig.dev.json
+/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/bin/Debug/netcoreapp2.1/EntityFramework.dll
+/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/bin/Debug/netcoreapp2.1/EntityFramework.pdb
+/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/obj/Debug/netcoreapp2.1/EntityFramework.csprojAssemblyReference.cache
+/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/obj/Debug/netcoreapp2.1/EntityFramework.AssemblyInfoInputs.cache
+/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/obj/Debug/netcoreapp2.1/EntityFramework.AssemblyInfo.cs
+/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/obj/Debug/netcoreapp2.1/EntityFramework.dll
+/home/karel/RiderProjects/Cs-gevorderen/EntityFramework/obj/Debug/netcoreapp2.1/EntityFramework.pdb
