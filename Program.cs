@@ -34,18 +34,21 @@ namespace EntityFramework
 
         private static void Analyse(NorthwindContext db)
         {
-            var regions =
-                from o in db.Orders
+            var regions = from o in db.Orders
                 join c in db.Customers on o.CustomerId equals c.CustomerId
-                join d in db.OrderDetails on d.OrderId equals o.OrderId
-                group d.Quantity by c.Country
-                into groep
-                select new {Country = groep.Key, Aantal = groep.Sum()};
-                    
-            foreach (var region in regions)
+                join d in db.OrderDetails on o.OrderId equals d.OrderId
+                
+                select new
+                {
+                    d.Quantity,
+                    d.UnitPrice,
+                    c.Country
+                };
+            Console.WriteLine("Land\t\tTotaal Verkocht");
+            foreach(var region in regions)
             {
-                Console.WriteLine("{0} {1}",region.Country, region.Aantal);
-            } 
+                Console.WriteLine("{0}\t{1}", region.Country,region.Quantity*region.UnitPrice);
+            }
         }     
 
         private static void Overzicht(NorthwindContext db)
