@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace EntityFramework
+﻿namespace EntityFrameworkProject
 {
-    public partial class CustomerCustomerDemo
+    public class CustomerCustomerDemo
     {
         public string CustomerId { get; set; }
         public string CustomerTypeId { get; set; }

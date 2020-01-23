@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EntityFramework
+namespace EntityFrameworkProject
 {
-    public partial class Employees
+    public class Employees
     {
         public Employees()
         {

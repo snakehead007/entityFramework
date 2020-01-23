@@ -1,10 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace EntityFramework
+namespace EntityFrameworkProject
 {
-    public partial class NorthwindContext : DbContext
+    public class NorthwindContext : DbContext
     {
         public NorthwindContext()
         {
@@ -33,8 +32,9 @@ namespace EntityFramework
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=185.115.217.152;Database=Ucll.Northwind;User Id=ucll;Password=Ucll2020.");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http: //go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer(
+                    "Server=185.115.217.152;Database=Ucll.Northwind;User Id=ucll;Password=Ucll2020.");
             }
         }
 
@@ -60,7 +60,7 @@ namespace EntityFramework
 
             modelBuilder.Entity<CustomerCustomerDemo>(entity =>
             {
-                entity.HasKey(e => new { e.CustomerId, e.CustomerTypeId })
+                entity.HasKey(e => new {e.CustomerId, e.CustomerTypeId})
                     .IsClustered(false);
 
                 entity.Property(e => e.CustomerId)
@@ -145,7 +145,7 @@ namespace EntityFramework
 
             modelBuilder.Entity<EmployeeTerritories>(entity =>
             {
-                entity.HasKey(e => new { e.EmployeeId, e.TerritoryId })
+                entity.HasKey(e => new {e.EmployeeId, e.TerritoryId})
                     .IsClustered(false);
 
                 entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
@@ -223,7 +223,7 @@ namespace EntityFramework
 
             modelBuilder.Entity<OrderDetails>(entity =>
             {
-                entity.HasKey(e => new { e.OrderId, e.ProductId })
+                entity.HasKey(e => new {e.OrderId, e.ProductId})
                     .HasName("PK_Order_Details");
 
                 entity.ToTable("Order Details");
@@ -446,6 +446,9 @@ namespace EntityFramework
             OnModelCreatingPartial(modelBuilder);
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        private void OnModelCreatingPartial(ModelBuilder modelBuilder)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

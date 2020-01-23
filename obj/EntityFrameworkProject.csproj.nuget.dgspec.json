@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/karel/RiderProjects/Cs-gevorderen/EntityFrameworkProject/EntityFrameworkProject.csproj": {}
+  },
+  "projects": {
+    "/home/karel/RiderProjects/Cs-gevorderen/EntityFrameworkProject/EntityFrameworkProject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/karel/RiderProjects/Cs-gevorderen/EntityFrameworkProject/EntityFrameworkProject.csproj",
+        "projectName": "EntityFrameworkProject",
+        "projectPath": "/home/karel/RiderProjects/Cs-gevorderen/EntityFrameworkProject/EntityFrameworkProject.csproj",
+        "packagesPath": "/home/karel/.nuget/packages/",
+        "outputPath": "/home/karel/RiderProjects/Cs-gevorderen/EntityFrameworkProject/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/karel/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
+using EntityFrameworkProject;
 
-namespace EntityFramework
+namespace EntityFrameworkProject
 {
     internal class Program
     {
@@ -98,8 +99,9 @@ namespace EntityFramework
                 select new {o.OrderId, o.CustomerId, o.Customer, o.Employee};
             var width = Console.WindowWidth;
             var pad = width / 8;
-            Console.Write("Order ID".PadRight(pad) + "Klant ID".PadRight(pad) + "KlantNaam".PadRight(pad * 4) +
-                          "Werknemer naam".PadRight(pad * 2) + "\n");
+            Console.WriteLine("{0} {1} {2} {3}", "Order ID".PadRight(pad), "Klant ID".PadRight(pad),
+                "KlantNaam".PadRight(pad * 4),
+                "Werknemer naam".PadRight(pad * 2));
             Console.Write(string.Concat(Enumerable.Repeat("-", width)));
             foreach (var order in orders)
                 Console.WriteLine(order.OrderId.ToString().PadRight(pad) + order.CustomerId.PadRight(pad) +
@@ -113,8 +115,9 @@ namespace EntityFramework
                     Console.WriteLine("Onbekende input probeer opnieuw");
             } while (orderId == 0);
 
-            Console.WriteLine("Product ID".PadRight(pad) + "Productnaam".PadRight(pad * 3) + "Aantal".PadRight(pad) +
-                              "Eenheidsprijs".PadRight(pad * 2) + "LijnWaarde".PadRight(pad));
+            Console.WriteLine("{0} {1} {2} {3}", "Product ID".PadRight(pad), "Productnaam".PadRight(pad * 3),
+                "Aantal".PadRight(pad),
+                "Eenheidsprijs".PadRight(pad * 2), "LijnWaarde".PadRight(pad));
             Console.Write(string.Concat(Enumerable.Repeat("-", width)));
             var products = from o in db.OrderDetails
                 where o.OrderId == orderId

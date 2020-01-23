@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace EntityFramework
+namespace EntityFrameworkProject
 {
-    public partial class CustomerDemographics
+    public class CustomerDemographics
     {
         public CustomerDemographics()
         {

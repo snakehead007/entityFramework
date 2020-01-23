@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EntityFramework
+namespace EntityFrameworkProject
 {
-    public partial class Orders
+    public class Orders
     {
         public Orders()
         {
